@@ -32,3 +32,66 @@ This package include following functions,
 devtools::install_github("zxkathy/powers")
 library(powers)
 ```
+
+## Quick Guide
+
+####1. Function of `square()`
+
+```{r}
+square(4)
+square(c(1:3))
+square(TRUE)
+```
+As we expected, the square function works well in the vector or number forms. Let's try another one.
+
+```{r, error=TRUE}
+square("x")
+m <- data.frame(cbind(c(1,2), c(3,4)))
+class(m)
+square(m)
+```
+The square function only works in forms of vector of numeric, so it won't work for both str `"x"` and data.frame `m`.
+
+####2. Function of `boxcox()` and `boxcox.inc()`
+```{r}
+boxcox(2, lambda = 3)
+boxcox(1:3, lambda = 0)
+```
+
+```{r}
+boxcox.inv(2, lambda = 3)
+boxcox.inv(1:3, lambda = 0)
+```
+
+The above `boxcox()` formula was obtained from the [link](http://onlinestatbook.com/2/transformations/box-cox.html). It doesn't specify the range of `lambda` and `x`, so when I get the case of boxcox result is 0, its inverse should be `Inf`.
+
+Additionally, the above `boxcox.inv()` relies on the function of `boxcox()`. It basically just takes the inverse of the result of `boxcox()`.
+
+```{r, error=TRUE}
+boxcox(-1, 0)
+```
+
+As log(.) does not work for negative numbers, so I added a error point when the user's input of `x` is negative.
+
+####3. Function of `filter.na()`
+
+This function has two output, first one indicating whether the dataset contains any NA values, second one indicating the NA filtered dataset. User can specify how to remove the NA values, either by column or by row, as specified by the user.
+
+```{r}
+a <- data.frame(cbind(c(1,2), c(NA, 3), c("m",7)))
+class(a)
+filter.na(a, direction = "row")
+```
+
+```{r}
+b <- data.frame(cbind(c(1,2), c(5, "kk"), c(5,7)))
+class(b)
+filter.na(b, direction = "col")
+```
+
+```{r, error=TRUE}
+c <- cbind(c(1,2), c(NA, 7), c(5,7))
+class(c)
+filter.na(c, direction = "col")
+```
+

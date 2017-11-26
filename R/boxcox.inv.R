@@ -15,3 +15,4 @@
 #' boxcox.inv(2, 0)
 #' @export
 boxcox.inv <- function(x, lambda) 1/boxcox(x, lambda)
+
