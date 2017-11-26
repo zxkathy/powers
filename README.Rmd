@@ -28,6 +28,7 @@ This package include following functions,
 
 ## Installation
 
-``` {r}
-devtools::install_github("zxkathy/STAT547M_Zhao_Xin_HW/tree/master/HW9/powers")
+``` {r, warning = FALSE}
+devtools::install_github("zxkathy/powers")
+library(powers)
 ```

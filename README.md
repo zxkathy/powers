@@ -1,14 +1,20 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-powers
-======
+PACKAGE powers
+==============
 
-The goal of powers is to ...11
+The goal of powers is to serve as the homework of STAT547M.
 
-Example
--------
+Functions Summary
+-----------------
 
-This is a basic example which shows you how to solve a common problem:
+This package include following functions, - squre(): take the square of a vector; - boxcox(): take the boxcox transformations of a vector, - boxcox.inv(): take the inverse boxcox transformations of a vector, - na.filter(): filter out NA values by row or columns specified by the user for a dataset
+
+Installation
+------------
 
 ``` r
-## basic example code
+devtools::install_github("zxkathy/powers")
+#> Skipping install of 'powers' from a github remote, the SHA1 (bcbc535b) has not changed since last install.
+#>   Use `force = TRUE` to force installation
+library(powers)
 ```
