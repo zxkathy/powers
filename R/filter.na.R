@@ -1,4 +1,4 @@
-#' Filter out the observations/features that contains the NA values within data.frame
+#' Filter out the observations/features that contains the NA values within data.frame.
 #'
 #' Tells whether the data input contains any NA values,
 #' and filter out the NA values by user's specification - namely, either row or columne.
@@ -11,13 +11,8 @@
 #' second element indicating the dataset with NA values omitted.
 #'
 #' @details
-#' We only do the boxcox transformations that only requires one input.
-#'
-#' Here are some reasons why putting a list in this section is excessive:
-#' \itemize{
-#'      \item This \code{boxcox} function only requires one input.
-#'      \item There's nothing else to say about \code{boxcox}.
-#' }
+#' Filter out the observations/features that contains the NA values within data frame,
+#' if none missing data found in the inputted data frame, return the data frame back.
 #'
 #' @examples
 #' m <- as.data.frame(cbind(c(1,2,1), c(2,2,NA)))
