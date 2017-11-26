@@ -2,7 +2,7 @@
 % Please edit documentation in R/boxcox.R
 \name{boxcox}
 \alias{boxcox}
-\title{Boxcox boxcox transformation of a vector/number}
+\title{Boxcox transformation of a vector/number}
 \usage{
 boxcox(x, lambda)
 }

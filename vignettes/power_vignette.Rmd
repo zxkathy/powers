@@ -1,5 +1,5 @@
 ---
-title: "Vignette Title"
+title: "Vignette File of Power"
 author: "Kathy Zhao"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -8,14 +8,6 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
-```
 
 # PACKAGE powers
 
@@ -55,6 +47,9 @@ square(m)
 ```
 The square function only works in forms of vector of numeric, so it won't work for both str `"x"` and data.frame `m`.
 
+The unit test file of `square()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_square.R), and all the test passed.
+
+
 ####2. Function of `boxcox()` and `boxcox.inc()`
 ```{r}
 boxcox(2, lambda = 3)
@@ -73,3 +68,31 @@ Additionally, the above `boxcox.inv()` relies on the function of `boxcox()`. It 
 ```{r, error=TRUE}
 boxcox(-1, 0)
 ```
+
+As log(.) does not work for negative numbers, so I added a error point when the user's input of `x` is negative.
+
+The unit test file of `boxcox()` and `boxcox.inv()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_boxcox.R), and all the test passed.
+
+####3. Function of `filter.na()`
+
+This function has two output, first one indicating whether the dataset contains any NA values, second one indicating the NA filtered dataset. User can specify how to remove the NA values, either by column or by row, as specified by the user.
+
+```{r}
+a <- data.frame(cbind(c(1,2), c(NA, 3), c("m",7)))
+class(a)
+filter.na(a, direction = "row")
+```
+
+```{r}
+b <- data.frame(cbind(c(1,2), c(5, "kk"), c(5,7)))
+class(b)
+filter.na(b, direction = "col")
+```
+
+```{r, error=TRUE}
+c <- cbind(c(1,2), c(NA, 7), c(5,7))
+class(c)
+filter.na(c, direction = "col")
+```
+
+The unit test file of `filter.na()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_filterna.R), and all the test passed.

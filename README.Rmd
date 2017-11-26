@@ -52,7 +52,7 @@ square(m)
 ```
 The square function only works in forms of vector of numeric, so it won't work for both str `"x"` and data.frame `m`.
 
-The unit test file of `square()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_square.R), and all the test passes.
+The unit test file of `square()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_square.R), and all the test passed.
 
 
 ####2. Function of `boxcox()` and `boxcox.inc()`
@@ -76,7 +76,7 @@ boxcox(-1, 0)
 
 As log(.) does not work for negative numbers, so I added a error point when the user's input of `x` is negative.
 
-The unit test file of `boxcox()` and `boxcox.inv()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_boxcox.R), and all the test passes.
+The unit test file of `boxcox()` and `boxcox.inv()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_boxcox.R), and all the test passed.
 
 ####3. Function of `filter.na()`
 
@@ -100,4 +100,4 @@ class(c)
 filter.na(c, direction = "col")
 ```
 
-The unit test file of `filter.na()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_filterna.R), and all the test passes.
+The unit test file of `filter.na()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_filterna.R), and all the test passed.
