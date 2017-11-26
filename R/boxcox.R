@@ -1,4 +1,4 @@
-#' Boxcox boxcox transformation of a vector/number
+#' Boxcox transformation of a vector/number
 #'
 #' Transforms via the Box-Cox transform.
 #'

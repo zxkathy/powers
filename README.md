@@ -14,7 +14,7 @@ Installation
 
 ``` r
 devtools::install_github("zxkathy/powers")
-#> Skipping install of 'powers' from a github remote, the SHA1 (b5fdb9dc) has not changed since last install.
+#> Skipping install of 'powers' from a github remote, the SHA1 (669efa6d) has not changed since last install.
 #>   Use `force = TRUE` to force installation
 library(powers)
 ```
@@ -47,6 +47,8 @@ square(m)
 
 The square function only works in forms of vector of numeric, so it won't work for both str `"x"` and data.frame `m`.
 
+The unit test file of `square()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_square.R), and all the test passes.
+
 #### 2. Function of `boxcox()` and `boxcox.inc()`
 
 ``` r
@@ -73,6 +75,8 @@ boxcox(-1, 0)
 ```
 
 As log(.) does not work for negative numbers, so I added a error point when the user's input of `x` is negative.
+
+The unit test file of `boxcox()` and `boxcox.inv()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_boxcox.R), and all the test passes.
 
 #### 3. Function of `filter.na()`
 
@@ -112,3 +116,5 @@ class(c)
 filter.na(c, direction = "col")
 #> Error in filter.na(c, direction = "col"): Please input a data frame!
 ```
+
+The unit test file of `filter.na()` is [here](https://github.com/zxkathy/powers/blob/master/tests/testthat/test_filterna.R), and all the test passes.
