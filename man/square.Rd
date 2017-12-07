@@ -4,10 +4,10 @@
 \alias{square}
 \title{Square a vector}
 \usage{
-square(x)
+square(x = 1)
 }
 \arguments{
-\item{x}{The vector to be squared.}
+\item{x}{The vector to be squared. Default value is 1.}
 }
 \value{
 A vector that is the square of \code{x}.

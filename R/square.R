@@ -2,7 +2,7 @@
 #'
 #' That's it -- this function just squares a vector.
 #'
-#' @param x The vector to be squared.
+#' @param x The vector to be squared. Default value is 1.
 #'
 #' @return A vector that is the square of \code{x}.
 #'
@@ -22,4 +22,4 @@
 #' square(1:10)
 #' square(-5)
 #' @export
-square <- function(x) pow(x, 2)
+square <- function(x = 1) pow(x, 2)

@@ -4,12 +4,12 @@
 \alias{boxcox}
 \title{Boxcox transformation of a vector/number}
 \usage{
-boxcox(x, lambda)
+boxcox(x = 1, lambda = 1)
 }
 \arguments{
-\item{x}{The vector to be boxcoxed boxcoxed.}
+\item{x}{The vector to be boxcoxed boxcoxed. Default is 1.}
 
-\item{lambda}{The parameter of Box–Cox transformation}
+\item{lambda}{The parameter of Box–Cox transformation. Default is 1.}
 }
 \value{
 A vector/number that is the boxcox boxcox transformation of \code{x}.

@@ -4,12 +4,12 @@
 \alias{boxcox.inv}
 \title{Inverse boxcox transformation of a vector/number}
 \usage{
-boxcox.inv(x, lambda)
+boxcox.inv(x = 1, lambda = 1)
 }
 \arguments{
-\item{x}{The vector to be inverse boxcoxed.}
+\item{x}{The vector to be inverse boxcoxed. Default is 1.}
 
-\item{lambda}{The parameter of Box–Cox transformation}
+\item{lambda}{The parameter of Box–Cox transformation. Default is 1.}
 }
 \value{
 A vector/number that is the inverse boxcox transformation of \code{x}.
